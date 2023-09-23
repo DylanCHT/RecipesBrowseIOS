@@ -1,0 +1,19 @@
+README
+This native iOS app allows users to browse recipes from the Dessert category using the MealDB API. The app utilizes two endpoints to fetch and display meal information:
+
+List of Meals in the Dessert Category:
+
+Endpoint: https://themealdb.com/api/json/v1/1/filter.php?c=Dessert
+Meals are sorted alphabetically.
+  Meal Details by ID:
+
+Endpoint: https://themealdb.com/api/json/v1/1/lookup.php?i=MEAL_ID
+Meal detail view includes:
+  Meal name
+  Instructions
+  Ingredients and measurements
+
+App Features
+Filters out null or empty values from the API before displaying them.
+User-friendly interface.
+Developed using the latest version of Xcode.
