@@ -2,20 +2,24 @@
 //  ContentView.swift
 //  MealFetchIOS
 //
-//  Created by Dylan  Tao on 9/22/23.
+//  Created by Dylan  Tao on 9/19/23.
 //
 
 import SwiftUI
 
 struct ContentView: View {
+    
+    @State private var selectedMeal: Meal.MealData?
+    @State private var pushView: Bool = false
+    
     var body: some View {
-        VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundColor(.accentColor)
-            Text("Hello, world!")
+        NavigationStack {
+            MealView(selectedMeal: $selectedMeal, pushView: $pushView)
+                .navigationTitle("Meals")
+                .navigationDestination(isPresented: $pushView) {
+                        MealDetailView(selectedMeal: $selectedMeal)
+                }
         }
-        .padding()
     }
 }
 
